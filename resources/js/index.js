@@ -3,3 +3,4 @@ magazines = [
   "https://flipboard.com/@dfletcher/india-tech-b2meqpd6z.rss",
   "https://flipboard.com/@thehindu/sportstarlive-rj3ttinvz.rss"
 ]
+
