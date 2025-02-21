@@ -10,8 +10,189 @@
 
         <body>
 
-        <div class="h1">Write your code in this file</div>
+        <div class="h1">Crio News Feed</div>
+        <!--Layout section-->
+        <div class="page-container">
+          <h1 class="today-text">Today</h1>
+          <p class="insights-text">The insights you need to keep ahead</p>
+        </div>
+
         <script src="resources/data/magazines.js"></script>
         <script src="resources/js/index.js"></script>
+        <div class="container mt-4">
+                <div class="accordion" id="newsAccordion">
+                  <!-- Accordion 1 -->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <!--<button
+                        class="accordion-button"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne"
+                        aria-expanded="true"
+                        aria-controls="collapseOne"
+                      >
+                        Topic 1
+                      </button>-->
+                    </h2>
+                    <div
+                      id="collapseOne"
+                      class="accordion-collapse collapse show"
+                      data-bs-parent="#newsAccordion"
+                    >
+                      <div class="accordion-body">
+                        <div id="carousel1" class="carousel slide" data-bs-ride="carousel">
+                          <div class="carousel-inner" id="carousel1Items">
+                            <!-- Carousel items for Topic 1 -->
+                          </div>
+                          <button
+                            class="carousel-control-prev"
+                            type="button"
+                            data-bs-target="#carousel1"
+                            data-bs-slide="prev"
+                          >
+                            <span class="carousel-control-prev-icon"></span>
+                          </button>
+                          <button
+                            class="carousel-control-next"
+                            type="button"
+                            data-bs-target="#carousel1"
+                            data-bs-slide="next"
+                          >
+                            <span class="carousel-control-next-icon"></span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!--<div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne"
+                        aria-expanded="true"
+                      >
+                        Topic 1
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseOne"
+                      class="accordion-collapse collapse show"
+                      data-bs-parent="#newsAccordion"
+                    >
+                      <div class="accordion-body">
+                        <div id="carousel1" class="carousel slide" data-bs-ride="carousel">
+                          <div class="carousel-inner" id="carousel1Items">
+                            <!-- Carousel items for Topic 1 will be injected dynamically -->
+                          <!--</div>
+                          <button
+                            class="carousel-control-prev"
+                            type="button"
+                            data-bs-target="#carousel1"
+                            data-bs-slide="prev"
+                          >
+                            <span class="carousel-control-prev-icon"></span>
+                          </button>
+                          <button
+                            class="carousel-control-next"
+                            type="button"
+                            data-bs-target="#carousel1"
+                            data-bs-slide="next"
+                          >
+                            <span class="carousel-control-next-icon"></span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div> -->
+                  <!-- Accordion 2 -->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo"
+                      >
+                        Topic 2
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseTwo"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#newsAccordion"
+                    >
+                      <div class="accordion-body">
+                        <div id="carousel2" class="carousel slide" data-bs-ride="carousel">
+                          <div class="carousel-inner" id="carousel2Items">
+                            <!-- Carousel items for Topic 2 will be injected dynamically -->
+                          </div>
+                          <button
+                            class="carousel-control-prev"
+                            type="button"
+                            data-bs-target="#carousel2"
+                            data-bs-slide="prev"
+                          >
+                            <span class="carousel-control-prev-icon"></span>
+                          </button>
+                          <button
+                            class="carousel-control-next"
+                            type="button"
+                            data-bs-target="#carousel2"
+                            data-bs-slide="next"
+                          >
+                            <span class="carousel-control-next-icon"></span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Accordion 3 -->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree"
+                      >
+                        Topic 3
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseThree"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#newsAccordion"
+                    >
+                      <div class="accordion-body">
+                        <div id="carousel3" class="carousel slide" data-bs-ride="carousel">
+                          <div class="carousel-inner" id="carousel3Items">
+                            <!-- Carousel items for Topic 3 will be injected dynamically -->
+                          </div>
+                          <button
+                            class="carousel-control-prev"
+                            type="button"
+                            data-bs-target="#carousel3"
+                            data-bs-slide="prev"
+                          >
+                            <span class="carousel-control-prev-icon"></span>
+                          </button>
+                          <button
+                            class="carousel-control-next"
+                            type="button"
+                            data-bs-target="#carousel3"
+                            data-bs-slide="next"
+                          >
+                            <span class="carousel-control-next-icon"></span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
         </body>
         </html>
