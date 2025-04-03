@@ -31,10 +31,11 @@ const carousels = ["carousel1Items", "carousel2Items", "carousel3Items"];
     });
 //close the first accordian when another button is clicked
 document.querySelectorAll("button[data-bs-toggle='collapse']").forEach(button=>{
-  button.addEventListener("click",()=>{
+  button.addEventListener("click",(event)=>{
+    const targetAccordion = document.querySelector(button.getAttribute("data-bs-target"));
     const firstAccordion = document.getElementById("accordion1");
-    if(firstAccordion && firstAccordion.classList.contains("show")){
-      new bootstrap.Collapse(firstAccordion,{toggle:true});
+    if(firstAccordion && firstAccordion !==targetAccordion && firstAccordion.classList.contains("show")){
+      bootstrap.Collapse (firstAccordion,{toggle:false}).hide();
     }
   });
 });
