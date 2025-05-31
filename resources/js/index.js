@@ -78,7 +78,7 @@ document.querySelectorAll("button[data-bs-toggle='collapse']").forEach(button =>
   button.addEventListener("click", () => {
     const targetId = button.getAttribute("data-bs-target");
     const targetAccordion = document.querySelector(targetId);
-    const firstAccordion = document.getElementById("accordion1");
+    const firstAccordion = document.getElementById("collapseOne");
 
     if (firstAccordion && firstAccordion !== targetAccordion && firstAccordion.classList.contains("show")) {
       const instance = bootstrap.Collapse.getInstance(firstAccordion) || new bootstrap.Collapse(firstAccordion, { toggle: false });
