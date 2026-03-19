@@ -1,89 +1,84 @@
- /* const magazines = [
+  const magazines = [
   "https://flipboard.com/@thenewsdesk/the-latest-on-coronavirus-covid-19-t82no8kmz.rss",
   "https://flipboard.com/@dfletcher/india-tech-b2meqpd6z.rss",
   "https://flipboard.com/@thehindu/sportstarlive-rj3ttinvz.rss"
 ]
-
-const carousels = ["carousel1Items", "carousel2Items", "carousel3Items"];
-
-    magazines.forEach((url, index) => {
-      fetch(`https://api.rss2json.com/v1/api.json?rss_url=${url}`)
-        .then((response) => response.json())
-        .then((data) => {
-          const items = data.items;
-          const carousel = document.getElementById(carousels[index]);
-
-          items.forEach((item, i) => {
-            const div = document.createElement("div");
-            div.className = `carousel-item ${i === 0 ? "active" : ""}`;
-            div.innerHTML = `
-              <div class="card" onclick="window.open('${item.link}', '_blank')">
-                <img src="${item.enclosure?.link || 'https://via.placeholder.com/150'}" class="card-img-top" alt="News Image">
-                <div class="card-body">
-                  <h5 class="card-title">${item.title}</h5>
-                  <p class="card-text">${item.description}</p>
-                </div>
-              </div>
-            `;
-            carousel.appendChild(div);
-          });
-        });
-    });
-//close the first accordian when another button is clicked
-document.querySelectorAll("button[data-bs-toggle='collapse']").forEach(button=>{
-  button.addEventListener("click",(event)=>{
-    const targetId= button.getAttribute("data-bs-target");
-    const targetAccordion = document.getElementById(targetId);
-    const firstAccordion = document.getElementById("accordion1");
-    if(firstAccordion && firstAccordion !==targetAccordion && firstAccordion.classList.contains("show")){
-      const firstAccordion = bootstrap.Collapse.getInstance(firstAccordion) || new bootstrap.Collapse(firstAccordion, { toggle: false });
-     firstAccordion.hide();
-    }
-  });
-});*/
-const magazines = [
-  "https://flipboard.com/@thenewsdesk/the-latest-on-coronavirus-covid-19-t82no8kmz.rss",
-  "https://flipboard.com/@dfletcher/india-tech-b2meqpd6z.rss",
-  "https://flipboard.com/@thehindu/sportstarlive-rj3ttinvz.rss"
+const topics = [
+  {
+    name: "Politics",
+    url: "https://flipboard.com/topic/politics.rss",
+    carouselId: "carousel1"
+  },
+  {
+    name: "Space",
+    url: "https://flipboard.com/topic/space.rss",
+    carouselId: "carousel2"
+  },
+  {
+    name: "Sports",
+    url: "https://flipboard.com/topic/indiansports.rss",
+    carouselId: "carousel3"
+  }
 ];
 
-const carousels = ["carousel1Items", "carousel2Items", "carousel3Items"];
+// Fetch RSS → JSON
+async function fetchNews(topic) {
+  const api = `https://api.rss2json.com/v1/api.json?rss_url=${topic.url}`;
+  const res = await fetch(api);
+  const data = await res.json();
+  createCarousel(topic.carouselId, data.items);
+}
 
-magazines.forEach((url, index) => {
-  fetch(`https://api.rss2json.com/v1/api.json?rss_url=${url}`)
-    .then((response) => response.json())
-    .then((data) => {
-      const items = data.items;
-      const carousel = document.getElementById(carousels[index]);
+// Create carousel
+function createCarousel(id, items) {
+  const carousel = document.getElementById(id);
 
-      items.forEach((item, i) => {
-        const div = document.createElement("div");
-        div.className = `carousel-item ${i === 0 ? "active" : ""}`;
-        div.innerHTML = `
-          <div class="card h-100" onclick="window.open('${item.link}', '_blank')" style="cursor: pointer;">
-            <img src="${item.enclosure?.link || 'https://via.placeholder.com/150'}" class="card-img-top" alt="News Image">
-            <div class="card-body">
-              <h5 class="card-title">${item.title}</h5>
-              <p class="card-text">${item.description}</p>
-            </div>
+  let content = `
+    <div class="carousel-inner">
+  `;
+
+  items.forEach((item, index) => {
+    content += `
+      <div class="carousel-item ${index === 0 ? "active" : ""}">
+        <div class="card" onclick="openLink('${item.link}')">
+        <img src="${item.enclosure?.link || item.thumbnail || 'https://via.placeholder.com/300'}" class="d-block w-100">
+          <div class="card-body">
+            <h5>${item.title}</h5>
+            <!-- Author + Date -->
+        <p class="text-muted">
+          <strong>${item.author || "Unknown"}</strong> .
+          ${new Date(item.pubDate).toDateString()}
+        </p>
+
+        <!-- Description -->
+        <p class="card-text">${item.description}</p>
           </div>
-        `;
-        carousel.appendChild(div);
-      });
-    });
-});
-
-// Accordion logic to collapse first one when others open
-document.querySelectorAll("button[data-bs-toggle='collapse']").forEach(button => {
-  button.addEventListener("click", () => {
-    const targetId = button.getAttribute("data-bs-target");
-    const targetAccordion = document.querySelector(targetId);
-    const firstAccordion = document.getElementById("collapseOne");
-
-    if (firstAccordion && firstAccordion !== targetAccordion && firstAccordion.classList.contains("show")) {
-      const instance = bootstrap.Collapse.getInstance(firstAccordion) || new bootstrap.Collapse(firstAccordion, { toggle: false });
-      instance.hide();
-    }
+        </div>
+      </div>
+    `;
   });
-});
+
+
+  content += `
+    </div>
+
+    <button class="carousel-control-prev" data-bs-target="#${id}" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+
+    <button class="carousel-control-next" data-bs-target="#${id}" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  `;
+
+  carousel.innerHTML = content;
+}
+
+// Open article
+function openLink(link) {
+  window.open(link, "_blank");
+}
+
+// Load all topics
+topics.forEach(fetchNews);
 
