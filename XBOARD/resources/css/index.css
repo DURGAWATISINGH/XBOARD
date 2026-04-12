@@ -1,0 +1,22 @@
+/*Navbar styles*/
+.navbar{
+  background-color: #fff;
+  width: 1322px;
+  height: 91px;
+  margin-left: 59px;
+}
+/*Layout for "Today" Text */
+.today-text{
+  width: 74px;
+  height: 32px;
+  top: 123px;
+  left: 116px;
+
+}
+/*Layout for subtitle*/
+.insights-text{
+  top: 165px;
+  left: 116px;
+  width: 331px;
+  height: 28px;
+}
