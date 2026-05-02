@@ -36,96 +36,128 @@
   </div>
 
   <!-- Accordion -->
-  <div class="accordion" id="newsAccordion">
+<div class="accordion" id="newsAccordion">
 
-    <!-- Politics -->
-    <div class="accordion-item">
-      <h2 class="accordion-header">
-        <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#collapse1">
-          Politics
-        </button>
-      </h2>
+  <!-- Politics -->
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button"
+        data-bs-toggle="collapse"
+        data-bs-target="#collapse1">
+        Politics
+      </button>
+    </h2>
 
-      <div id="collapse1" class="accordion-collapse collapse show" data-bs-parent="#newsAccordion">
-        <div class="accordion-body">
+    <div id="collapse1"
+      class="accordion-collapse collapse show"
+      data-bs-parent="#newsAccordion">
 
-          <div id="carousel1" class="carousel slide">
-            <div class="carousel-inner" id="carouselInner1"></div>
+      <div class="accordion-body">
 
-            <button type="button" class="carousel-control-prev" data-bs-target="#carousel1" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon"></span>
-            </button>
-
-            <button type="button" class="carousel-control-next" data-bs-target="#carousel1" data-bs-slide="next">
-              <span class="carousel-control-next-icon"></span>
-            </button>
-
+        <div id="carousel1" class="carousel slide">
+          <div class="carousel-inner" id="carouselInner1">
+            <!-- JS must add .carousel-item + .active -->
           </div>
 
-        </div>
-      </div>
-    </div>
+          <button type="button"
+            class="carousel-control-prev"
+            data-bs-target="#carousel1"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
 
-    <!-- Space -->
-    <div class="accordion-item">
-      <h2 class="accordion-header">
-        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapse2">
-          Space
-        </button>
-      </h2>
-
-      <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#newsAccordion">
-        <div class="accordion-body">
-
-          <div id="carousel2" class="carousel slide">
-            <div class="carousel-inner" id="carouselInner2"></div>
-
-            <button type="button" class="carousel-control-prev" data-bs-target="#carousel2" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon"></span>
-            </button>
-
-            <button type="button" class="carousel-control-next" data-bs-target="#carousel2" data-bs-slide="next">
-              <span class="carousel-control-next-icon"></span>
-            </button>
-
-          </div>
+          <button type="button"
+            class="carousel-control-next"
+            data-bs-target="#carousel1"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
 
         </div>
+
       </div>
     </div>
-
-    <!-- Sports -->
-    <div class="accordion-item">
-      <h2 class="accordion-header">
-        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapse3">
-          Sports
-        </button>
-      </h2>
-
-      <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#newsAccordion">
-        <div class="accordion-body">
-
-          <div id="carousel3" class="carousel slide">
-            <div class="carousel-inner" id="carouselInner3"></div>
-
-            <button type="button" class="carousel-control-prev" data-bs-target="#carousel3" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon"></span>
-            </button>
-
-            <button type="button" class="carousel-control-next" data-bs-target="#carousel3" data-bs-slide="next">
-              <span class="carousel-control-next-icon"></span>
-            </button>
-
-          </div>
-
-        </div>
-      </div>
-    </div>
-
   </div>
+
+  <!-- Space -->
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed"
+        data-bs-toggle="collapse"
+        data-bs-target="#collapse2">
+        Space
+      </button>
+    </h2>
+
+    <div id="collapse2"
+      class="accordion-collapse collapse"
+      data-bs-parent="#newsAccordion">
+
+      <div class="accordion-body">
+
+        <div id="carousel2" class="carousel slide">
+          <div class="carousel-inner" id="carouselInner2"></div>
+
+          <button type="button"
+            class="carousel-control-prev"
+            data-bs-target="#carousel2"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+
+          <button type="button"
+            class="carousel-control-next"
+            data-bs-target="#carousel2"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Sports -->
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed"
+        data-bs-toggle="collapse"
+        data-bs-target="#collapse3">
+        Sports
+      </button>
+    </h2>
+
+    <div id="collapse3"
+      class="accordion-collapse collapse"
+      data-bs-parent="#newsAccordion">
+
+      <div class="accordion-body">
+
+        <div id="carousel3" class="carousel slide">
+          <div class="carousel-inner" id="carouselInner3"></div>
+
+          <button type="button"
+            class="carousel-control-prev"
+            data-bs-target="#carousel3"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+
+          <button type="button"
+            class="carousel-control-next"
+            data-bs-target="#carousel3"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
 </div>
-
-
 <!--  SCRIPTS -->
 <script src="resources/data/magazines.js"></script>
 <script src="resources/js/index.js"></script>
