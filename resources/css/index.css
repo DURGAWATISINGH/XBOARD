@@ -1,22 +1,65 @@
-/*Navbar styles*/
-.navbar{
-  background-color: #fff;
+
+/* Navbar (Figma color + layout) */
+.custom-navbar{
+  background-color: #ffffff;
   width: 1322px;
   height: 91px;
-  margin-left: 59px;
+  left: 59px; 
 }
-/*Layout for "Today" Text */
-.today-text{
-  width: 74px;
-  height: 32px;
-  top: 123px;
-  left: 116px;
 
+/* Crio News Feed text */
+.navbar-brand {
+width: 218px;
+height: 58px;
+top: 17px;
+left: 57px;
 }
-/*Layout for subtitle*/
-.insights-text{
-  top: 165px;
-  left: 116px;
+  
+
+/* Pink line (Rectangle 7) */
+.rectangle-7 {
+  width: 27px;
+  height: 9px;
+  top: 10px;
+  left: 1px;
+  border-radius: 4.5px;
+  background-color: #E537B9;
+}
+
+/* Container for line + text */
+.brand-container {
+  display: flex;
+  flex-direction: column;
+}
+/* Brand container (logo + text in one line) */
+
+
+/* "Today" text */
+.today-text {
+ width: 74px;
+ height: 32px;
+ top: 123px;
+ left: 116px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0px;
+
+  color: #252b42;        /* text-gray-dark */
+}
+/* "The insights you need to keep ahead*/
+/* Subtitle */
+.insights-text {
   width: 331px;
   height: 28px;
+  top: 165px;
+  left: 116px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 10px; /* paragraph spacing */
+    letter-spacing: 0px;  
+    color: #858585;
 }
